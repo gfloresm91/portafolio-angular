@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  node.portafolio-angular:
+    image: node:alpine
+    user: 'node'
+    working_dir: /home/node/app
+    container_name: 'node.portafolio-angular'
+    restart: 'always'
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./:/home/node/app
+    ports:
+      # Here set you personal port
+      - 4200:4200
+    command: 'npm start'

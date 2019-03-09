@@ -12,19 +12,31 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
+  public status: boolean;
 
   constructor(
     private _projectService: ProjectService
   ) {
     this.title = 'Crear proyecto';
-    this.project = new Project('', '', '', '', 2019 ,'' ,'');
+    this.project = new Project('', '', '', '', 2019, '', '');
   }
 
   ngOnInit() {
   }
 
   onSubmit(form) {
-    console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+      response => {
+        if (response.project) {
+          this.status = true;
+        } else {
+          this.status = false;
+        }
+      },
+      error => {
+        console.log(error as any);
+      }
+    );
   }
 
 }
