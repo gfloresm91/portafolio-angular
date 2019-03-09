@@ -12,7 +12,7 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
-  public status: boolean;
+  public status: string;
 
   constructor(
     private _projectService: ProjectService
@@ -28,9 +28,9 @@ export class CreateComponent implements OnInit {
     this._projectService.saveProject(this.project).subscribe(
       response => {
         if (response.project) {
-          this.status = true;
+          this.status = 'success';
         } else {
-          this.status = false;
+          this.status = 'failed';
         }
       },
       error => {
