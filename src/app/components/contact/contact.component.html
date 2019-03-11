@@ -1,7 +1,10 @@
 <div class="container">
-  <div class="galeria">
-    <div><img src="assets/img/caracol.jpg" title="caracol"></div>
-    <div><img src="assets/img/hojas.jpg" title="hojas"></div>
-    <div><img src="assets/img/rojo.jpg" title="rojo"></div>
+  <label for="">Ingrese un tamaño para el slider: </label>
+  <input type="number" [(ngModel)]="widthSlider">
+  <button (click)="cargarSlider()">Cargar slider</button>
+  <button (click)="resetearSlider()">Resetear slider</button>
+
+  <div *ngIf="tamanoSlider">
+    <app-slider [tamanoSlider]="widthSlider"></app-slider>
   </div>
 </div>

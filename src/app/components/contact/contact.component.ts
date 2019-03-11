@@ -7,17 +7,20 @@ declare var $: any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public widthSlider: number;
+  public tamanoSlider: number;
 
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(() => {
-      $('.galeria').bxSlider({
-        mode: 'fade',
-        captions: true,
-        slideWidth: 800
-      });
-    });
   }
 
+  cargarSlider() {
+    this.tamanoSlider = this.widthSlider;
+  }
+
+  resetearSlider() {
+    this.widthSlider = null;
+    this.tamanoSlider = null;
+  }
 }
