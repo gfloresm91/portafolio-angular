@@ -9,6 +9,7 @@ declare var $: any;
 export class ContactComponent implements OnInit {
   public widthSlider: number;
   public tamanoSlider: number;
+  public autor: any;
 
   constructor() { }
 
@@ -22,5 +23,9 @@ export class ContactComponent implements OnInit {
   resetearSlider() {
     this.widthSlider = null;
     this.tamanoSlider = null;
+  }
+
+  getAuthor(event) {
+    this.autor = event;
   }
 }

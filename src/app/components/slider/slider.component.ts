@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -9,8 +9,15 @@ declare var $: any;
 export class SliderComponent implements OnInit {
 
   @Input() tamanoSlider: number;
+  @Output() obtenerAutor = new EventEmitter();
 
-  constructor() { }
+  public autor: any;
+  constructor() {
+      this.autor = {
+        nombre: 'Gabriel Flores',
+        website: 'gabrielflores.cl'
+      };
+   }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -20,6 +27,10 @@ export class SliderComponent implements OnInit {
         slideWidth: this.tamanoSlider
       });
     });
+  }
+
+  lanzarEvento(event) {
+    this.obtenerAutor.emit(this.autor);
   }
 
 }

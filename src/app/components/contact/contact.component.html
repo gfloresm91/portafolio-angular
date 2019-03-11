@@ -5,6 +5,11 @@
   <button (click)="resetearSlider()">Resetear slider</button>
 
   <div *ngIf="tamanoSlider">
-    <app-slider [tamanoSlider]="widthSlider"></app-slider>
+    <app-slider [tamanoSlider]="widthSlider" (obtenerAutor)="getAuthor($event)"></app-slider>
   </div>
+
+  <ng-container *ngIf="autor">
+    <p>Nombre: {{ autor.nombre }}</p>
+    <p>Website: {{ autor.website }}</p>
+  </ng-container>
 </div>
