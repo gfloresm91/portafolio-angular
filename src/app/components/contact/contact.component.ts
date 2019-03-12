@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.texto.nativeElement.textContent);
+    // console.log(this.texto.nativeElement.textContent);
   }
 
   cargarSlider() {
