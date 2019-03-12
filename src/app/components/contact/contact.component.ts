@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -11,9 +11,12 @@ export class ContactComponent implements OnInit {
   public tamanoSlider: number;
   public autor: any;
 
+  @ViewChild('texto') texto;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.texto.nativeElement.textContent);
   }
 
   cargarSlider() {

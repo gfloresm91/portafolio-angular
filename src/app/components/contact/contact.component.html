@@ -1,15 +1,5 @@
 <div class="container">
-  <label for="">Ingrese un tamaño para el slider: </label>
-  <input type="number" [(ngModel)]="widthSlider">
-  <button (click)="cargarSlider()">Cargar slider</button>
-  <button (click)="resetearSlider()">Resetear slider</button>
-
-  <div *ngIf="tamanoSlider">
-    <app-slider [tamanoSlider]="widthSlider" (obtenerAutor)="getAuthor($event)"></app-slider>
-  </div>
-
-  <ng-container *ngIf="autor">
-    <p>Nombre: {{ autor.nombre }}</p>
-    <p>Website: {{ autor.website }}</p>
-  </ng-container>
+  <p #texto>
+    Esta es la página de contacto
+  </p>
 </div>
