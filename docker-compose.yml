@@ -9,7 +9,7 @@ services:
     container_name: 'node.portafolio-angular'
     restart: 'always'
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
     volumes:
       - ./:/home/node/app
     ports:
